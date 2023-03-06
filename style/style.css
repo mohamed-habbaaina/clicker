@@ -1,0 +1,126 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+main{
+    width: 80%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+button{
+    cursor: pointer;
+}
+
+.container{
+    /* background-color: aqua; */
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.clicker{
+    /* background-color: yellow; */
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.scors{
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    /* background-color: bisque; */
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.logo button{
+    background-color: transparent;
+    border: none;
+}
+.logo button img{
+    width: 100px;
+    filter: drop-shadow(0 0 3px rgb(237, 8, 8));
+    transition: all .3s;
+
+    /* transform: rotates 100s linear infinite ; */
+}
+.logo button img:active{
+    width: 90PX;
+    transform: rotate(360deg);
+}
+
+/* @keyframes rotates {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    } */
+/* } */
+.level{
+    width: 30%;
+    height: 100%;
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-left: 2px solid black;
+}
+.level button{
+    padding: 7px 15px;
+    border-radius: 15px 0;
+    margin-left: 5px;
+    filter: drop-shadow(0 0 3px rgb(237, 8, 8));
+    border: transparent;
+    transition: all .5s;
+
+}
+.level button:active{
+    width: 80%;
+    height: 11%;
+    transform: rotate(30deg);
+
+}
+
+/********************** @media **********************/
+/* ************************************************ */
+
+@media screen and (max-width: 625px) {
+
+    main{
+        width: 95%;
+    }
+    .clicker{
+        width: 50%;
+    }
+    .level{
+        width: 40%;
+    }
+}
