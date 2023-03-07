@@ -22,9 +22,8 @@ main{
 button{
     cursor: pointer;
 }
-
+/* container Game */
 .container{
-    /* background-color: aqua; */
     width: 400px;
     height: 400px;
     display: flex;
@@ -34,7 +33,6 @@ button{
     border: 2px solid black;
 }
 .clicker{
-    /* background-color: yellow; */
     width: 60%;
     height: 100%;
     display: flex;
@@ -43,7 +41,6 @@ button{
     align-items: center;
 }
 .scors{
-    /* background-color: blueviolet; */
     width: 100%;
     height: 30%;
     display: flex;
@@ -51,13 +48,15 @@ button{
     justify-content: center;
     align-items: center;
 }
+
+/* logo clicker */
 .logo{
-    /* background-color: bisque; */
     width: 100%;
     height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
 }
 .logo button{
@@ -69,25 +68,16 @@ button{
     filter: drop-shadow(0 0 3px rgb(237, 8, 8));
     transition: all .3s;
 
-    /* transform: rotates 100s linear infinite ; */
 }
 .logo button img:active{
     width: 90PX;
     transform: rotate(360deg);
 }
 
-/* @keyframes rotates {
-    from{
-        transform: rotate(0);
-    }
-    to{
-        transform: rotate(360deg);
-    } */
-/* } */
+/* burron level */
 .level{
     width: 30%;
     height: 100%;
-    /* background-color: cadetblue; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -107,12 +97,32 @@ button{
     width: 80%;
     height: 11%;
     transform: rotate(30deg);
-
 }
-
 .level button:active[disabled]{
     transform: scaleX(-1);
 
+}
+
+/* button Reset */
+.displayNone{
+
+    display: none;
+}
+.reset{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border: 1px solid #afaf00;
+    padding: 5px 7px;
+    border-radius: 0 13px;
+    border-radius: 5x 5px;
+    filter: drop-shadow(0 0 7px rgb(237, 210, 8));
+    transition: all .3s;
+}
+.reset:hover{
+    color: #af4600;
+    border: 1px solid #af4600;
+    filter: drop-shadow(0 0 3px rgb(237, 8, 8));
 }
 
 /********************** @media **********************/
