@@ -57,29 +57,42 @@ window.addEventListener('load', loadGame);
 
 function loadGame() {
 
+    scors.innerHTML = click + ' pt.';       // display scors.
+
     if(setLcale_1 === true){
 
-        set_1 = setInterval(clic, 5000);  // aplicated setinterval level 1
+        set_1 = setInterval(clic, 500);  // aplicated setinterval level 1
         disabledLevel1 = false;           // button disabled
 
         // display button reset
         reset.classList.remove('displayNone');
 
+        levels[0].classList.add("transpart");   // add classList transparant color , return: 50 pt. => ''
+
     }
 
     if(setLcale_2 === true){
-        set_2 = setInterval(clic, 2000); // aplicated setinterval level 2
+        set_2 = setInterval(clic, 200); // aplicated setinterval level 2
         disabledLevel2 = false;         // button disabled
+
+        levels[0].classList.add("transpart");   // add classList transparant color , return: 120 pt. => ''
+
     }
 
     if(setLcale_3 === true){
-        set_3 = setInterval(clic, 500);
+        set_3 = setInterval(clic, 50);
         disabledLevel3 = false;
+
+        levels[0].classList.add("transpart");   // add classList transparant color , return: 1000 pt. => ''
+
     }
 
     if(setLcale_4 === true){
-        set_4 = setInterval(clic, 200);
+        set_4 = setInterval(clic, 10);
         disabledLevel4 = false;
+
+        levels[0].classList.add("transpart");   // add classList transparant color , return: 3000 pt. => ''
+
     }
 
     
@@ -99,6 +112,7 @@ function clic(){
 
         // display button level 1
         levels[0].disabled = false;
+
     }
     if (click >= 120 && disabledLevel2 === true) {
 
@@ -129,13 +143,16 @@ function level_1(){
     if(click >= 50 || setLcale_1 === true){
 
         click -= 50;
-        set_1 = setInterval(clic, 5000); // bonus 1 click every 5 seconds.
+
+        set_1 = setInterval(clic, 500); // bonus 1 click every 5 seconds.
 
         localStorage.setItem("setLcale_1", JSON.stringify(true)); // stored that the bonus is available
 
         // display button === disabled.
         levels[0].disabled = true;
         disabledLevel1 = false;
+
+        levels[0].classList.add("transpart");
 
         // display button reset
         reset.classList.remove('displayNone');
@@ -153,13 +170,16 @@ function level_2(){
     if(click >= 120){
 
         click -= 120;
-        set_2 = setInterval(clic, 2000) //  bonus 1 click every 2 seconds.
+        set_2 = setInterval(clic, 200) //  bonus 1 click every 2 seconds.
 
         localStorage.setItem("setLcale_2", JSON.stringify(true)); // stored
 
         // display button == disabled.
         levels[1].disabled = true;
         disabledLevel2 = false;
+
+        levels[1].classList.add("transpart");
+
     }
 }
 
@@ -171,15 +191,18 @@ function level_2(){
 
 function level_3(){
 
-    if(click >= 400){
-        click -= 400;
-        set_3 = setInterval(clic, 500) //  bonus 2 click every seconds.
+    if(click >= 1000){
+        click -= 1000;
+        set_3 = setInterval(clic, 50) //  bonus 2 click every seconds.
 
         localStorage.setItem("setLcale_3", JSON.stringify(true)); // stored.
 
         // display button == disabled.
         levels[2].disabled = true;
         disabledLevel3 = false;
+
+        levels[2].classList.add("transpart");
+
     }
 }
 
@@ -191,15 +214,18 @@ function level_3(){
 
 function level_4(){
 
-    if(click >= 1000){
-        click -= 1000;
-        set_4 = setInterval(clic, 200) //  bonus 5 click every seconds.
+    if(click >= 3000){
+        click -= 3000;
+        set_4 = setInterval(clic, 10) //  bonus 5 click every seconds.
 
         localStorage.setItem("setLcale_4", JSON.stringify(true)); // stored.
 
         // display button == disabled.
         levels[3].disabled = true;
         disabledLevel4 = false;
+
+        levels[3].classList.add("transpart");
+
     }
 }
 
@@ -216,6 +242,7 @@ function resetGame() {
     clearInterval(set_4);
 
     click = 0;
+    
 
     // reset click in localStorage
     localStorage.setItem("click", click);
@@ -241,5 +268,11 @@ function resetGame() {
     levels[3].disabled = true;
 
     // add clasList "displayNone" button Reset.
-    reset.classList.add('displayNone')
+    reset.classList.add('displayNone');
+
+    levels[0].classList.remove("transpart");
+    levels[1].classList.remove("transpart");
+    levels[2].classList.remove("transpart");
+    levels[3].classList.remove("transpart");
+
 }
