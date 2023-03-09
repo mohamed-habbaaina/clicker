@@ -102,6 +102,9 @@ button{
     transform: scaleX(-1);
 
 }
+.transpart{
+    color: transparent;
+}
 
 /* button Reset */
 .displayNone{
